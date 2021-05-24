@@ -36,3 +36,8 @@ exports.removeDir = (path) => {
         fs.rmdirSync(path)
     }
 }
+
+//util Function for deleting Files
+exports.deleteFile = (file) => {
+    fs.unlinkSync(file)
+}
