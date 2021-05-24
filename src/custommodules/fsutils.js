@@ -29,3 +29,10 @@ exports.readFile = (path,type) => {
 exports.createDir = (folder)=>{
     if(!fs.existsSync(folder))fs.mkdirSync(folder)
 }
+
+//util Function to remove directory
+exports.removeDir = (path) => {
+    if(fs.existsSync(path)){
+        fs.rmdirSync(path)
+    }
+}
