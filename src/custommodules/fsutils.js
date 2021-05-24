@@ -65,3 +65,8 @@ exports.rmLine = (file,lineno) => {
     lines.splice(lineno,1)
     fs.writeFileSync(file,lines.join('\r\n'))
 }
+
+//util Function to list files in a dir
+exports.listFiles = (dir) => {
+    return fs.readdirSync(dir)
+}
