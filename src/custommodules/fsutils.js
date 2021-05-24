@@ -58,3 +58,10 @@ exports.addLine = (file,pos,content) => {
     newLines.splice(pos-1,0,content)
     fs.writeFileSync(file,newLines.join('\r\n'))
 }
+
+//util Function to remove a particular line of a file
+exports.rmLine = (file,lineno) => {
+    let lines = fs.readFileSync(file,'utf-8').split('\r\n')
+    lines.splice(lineno,1)
+    fs.writeFileSync(file,lines.join('\r\n'))
+}
