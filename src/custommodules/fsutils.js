@@ -19,7 +19,13 @@ exports.writeFile = (name,path,content,edit) => {
     fs.writeFileSync(`${path}\\${name}`,content)
 }
 
+//util function to readfile
 exports.readFile = (path,type) => {
     path = path == undefined ? 'utf-8' : path
     return fs.readFileSync(path,type)
+}
+
+//util function to create folder
+exports.createDir = (folder)=>{
+    if(!fs.existsSync(folder))fs.mkdirSync(folder)
 }
