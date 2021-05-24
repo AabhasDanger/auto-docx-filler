@@ -41,3 +41,20 @@ exports.removeDir = (path) => {
 exports.deleteFile = (file) => {
     fs.unlinkSync(file)
 }
+
+//util Function to addLine to a file
+exports.addLine = (file,pos,content) => {
+    let filecontent = fs.readFileSync(file,'utf-8')
+    let lines = filecontent.split('\r\n')
+    let newLines = []
+    pos = pos == undefined ? lines.length+1 : pos
+    if(pos>lines.length){
+        newLines = lines
+        newLines[pos-1] = content
+        fs.writeFileSync(file,newLines.join('\r\n'))
+        return
+    }
+    newLines = lines
+    newLines.splice(pos-1,0,content)
+    fs.writeFileSync(file,newLines.join('\r\n'))
+}
