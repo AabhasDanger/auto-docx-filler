@@ -32,13 +32,15 @@ exports.docCreation = (docObj) => {
     let content = fs.readFile(docObj.format,'binary')
     let zip = new PizZip(content)
     let doc;
+    
     try {
-        doc = new Docxtemplater(zip);
+        doc = new docx(zip);
     } catch(error) {
         // Catch compilation errors (errors caused by the compilation of the template : misplaced tags)
         errorHandler(error);
     }
-    doc.setData(docObject.data)
+    let data = docObj.data
+    doc.setData(data)
     try {
         // render the document (replace all occurences of {first_name} by John, {last_name} by Doe, ...)
         doc.render()
