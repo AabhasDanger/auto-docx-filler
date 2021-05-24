@@ -9,4 +9,7 @@ Electron is a js library which enables u to create desktop applications.
 Package in use to edit the word docs.
 (`https://www.npmjs.com/package/docxtemplater`)
 
+The UI is using a library called Bootstrap.
+(`https://getbootstrap.com/`)
+
 - AabhasDanger
