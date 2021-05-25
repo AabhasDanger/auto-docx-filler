@@ -9,11 +9,12 @@
 *ListFiles
 */
 
-let fs = require('fs')
+const fs = require('fs')
+const path = require('path')
 
 //util Function to create/write files
 exports.writeFile = (name,path,content,edit) => {
-    if(edit == false){
+    if(!edit){
         if(fs.readdirSync(path).includes(name)) return
     }
     fs.writeFileSync(`${path}\\${name}`,content)
@@ -69,4 +70,11 @@ exports.rmLine = (file,lineno) => {
 //util Function to list files in a dir
 exports.listFiles = (dir) => {
     return fs.readdirSync(dir)
+}
+
+//util function to copy paste a file
+exports.copyFile = (from,to,name) => {
+    let content = fs.readFileSync(from,'binary')
+    name = name == undefined ? path.basename(from) : name
+    fs.writeFileSync(path.resolve(to,name),content,{encoding:'binary'})
 }

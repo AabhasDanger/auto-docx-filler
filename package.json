@@ -45,15 +45,14 @@
     }
   },
   "dependencies": {
-    "docxtemplater": "^3.21.2",
-    "electron-squirrel-startup": "^1.0.0",
-    "pizzip": "^3.0.6"
+    "electron-squirrel-startup": "^1.0.0"
   },
   "devDependencies": {
-    "@electron-forge/cli": "^6.0.0-beta.56",
-    "@electron-forge/maker-deb": "^6.0.0-beta.56",
-    "@electron-forge/maker-rpm": "^6.0.0-beta.56",
-    "@electron-forge/maker-squirrel": "^6.0.0-beta.56",
-    "@electron-forge/maker-zip": "^6.0.0-beta.56"
+    "@electron-forge/cli": "^6.0.0-beta.57",
+    "@electron-forge/maker-deb": "^6.0.0-beta.57",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.57",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.57",
+    "@electron-forge/maker-zip": "^6.0.0-beta.57",
+    "electron": "12.0.9"
   }
 }

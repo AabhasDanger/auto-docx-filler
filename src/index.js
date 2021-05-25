@@ -11,7 +11,13 @@ const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    webPreferences:{
+      nodeIntegration:true
+    }
   });
+
+  //maximize the window
+  mainWindow.maximize()
 
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
